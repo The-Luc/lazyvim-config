@@ -11,16 +11,21 @@ vim.keymap.set("i", "jk", "<Esc>", { silent = true })
 vim.keymap.set("n", "<C-s>", ":wa<CR>", { desc = "Save All", silent = true })
 vim.keymap.set("i", "<C-s>", "<Esc>:wa<CR>", { desc = "Save All", silent = true })
 
+-- DEBUG PRINTS
 vim.keymap.set("n", "g?d", function()
   require("debugprint").deleteprints()
 end, { desc = "Delete Debug Prints" })
+
+-- DIFFVIEW
+vim.keymap.set("n", "<leader>go", "<cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>gx", "<cmd>DiffviewClose<CR>", { desc = "Close Diffview" })
 
 -- close window
 -- vim.keymap.set("n", "<C-q>", ":q<CR>", { desc = "Close Window", silent = true })
 
 -- move block of code
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move up" })
 
 -- join lines, keep cursor at current place
 vim.keymap.set("n", "J", "mzJ`z")
@@ -35,17 +40,17 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- let g:copilot_no_tab_map = v:true
 -- vim.keymap.set({ "n", "i" }, "<Tab>", "Nop")
 
--- vim.keymap.set("n", "<C-d>", "<C-d>zz")
--- vim.keymap.set("n", "<C-u>", "<C-u>zz")
--- vim.keymap.set("n", "n", "nzzzv")
--- vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
--- vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
--- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
--- vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy/add more to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy/add more to clipboard" })
 -- --
 -- vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete to blackhole" })
 
@@ -71,4 +76,4 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- vim.keymap.set('n', '<Leader>z', "<Cmd>lua require('maximize').toggle()<CR>")
 
 -- Comment
--- vim.keymap.set({ "v", "n" }, "<leader>/", "gcc")
+-- vim.keymap.set({ "v", "n" }, "<leader>/", "gcc", { desc = "Comment" })

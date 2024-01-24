@@ -2,15 +2,22 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    -- keys = {
-    --   -- add a keymap to browse plugin files
-    --   -- stylua: ignore
-    --   {
-    --     "<leader>fp",
-    --     function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-    --     desc = "Find Plugin File",
-    --   },
-    -- },
+    keys = {
+      -- add a keymap to browse plugin files
+      -- stylua: ignore
+      {
+        "<leader>fp",
+        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
+        desc = "Find Plugin File",
+      },
+      {
+        "<leader>ss",
+        function()
+          require("telescope.builtin").lsp_document_symbols()
+        end,
+        desc = "Goto Symbol",
+      },
+    },
     -- change some options
     opts = {
       defaults = {
