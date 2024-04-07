@@ -20,6 +20,9 @@ end, { desc = "Delete Debug Prints" })
 vim.keymap.set("n", "<leader>go", "<cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
 vim.keymap.set("n", "<leader>gx", "<cmd>DiffviewClose<CR>", { desc = "Close Diffview" })
 
+-- PROJECTS
+vim.keymap.set("n", "<leader>fo", "<cmd>Telescope projects<CR>", { desc = "Find Projects" })
+
 -- close window
 -- vim.keymap.set("n", "<C-q>", ":q<CR>", { desc = "Close Window", silent = true })
 
@@ -46,7 +49,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection" })
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
